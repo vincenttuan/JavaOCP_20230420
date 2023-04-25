@@ -26,4 +26,10 @@ public class Coffee {
 		}
 	}
 	
+	// 印出咖啡商品資訊
+	public static void printCoffee() {
+		System.out.printf("品名: %s 牛奶的比例: %.1f 價格: %d\n", name, ratioOfMilk, price);
+	}
+	
+	
 }
