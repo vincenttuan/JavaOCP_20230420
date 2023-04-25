@@ -14,7 +14,6 @@ public class CalcUtil {
 		return bmi;
 	}
 	
-	
 	public static void main(String[] args) {
 		int a = 100000, b = 200000;
 		int result = add(a, b);
