@@ -7,18 +7,14 @@ public class Coffee {
 	
 	// 調整牛奶比例的方法
 	public static void changeRatioOfMilk(double ratio) {
+		ratioOfMilk = ratio;
+		price = (int)(45 + 45*(ratio));
 		if(ratio == 0) {
 			name = "美式";
-			ratioOfMilk = ratio;
-			price = (int)(45 + 45*(ratio));
 		} else if (ratio == 0.3) {
 			name = "卡布奇諾";
-			ratioOfMilk = ratio;
-			price = (int)(45 + 45*(ratio));
 		} else if (ratio == 0.7) {
 			name = "拿鐵";
-			ratioOfMilk = ratio;
-			price = (int)(45 + 45*(ratio));
 		} else {
 			name = null;
 			ratioOfMilk = 0;
