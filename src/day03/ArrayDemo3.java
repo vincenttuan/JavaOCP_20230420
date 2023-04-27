@@ -1,5 +1,5 @@
 package day03;
-
+import java.util.Arrays;
 public class ArrayDemo3 {
 
 	public static void main(String[] args) {
@@ -13,6 +13,9 @@ public class ArrayDemo3 {
 			System.out.println(scores[i]);
 		}
 		
+		// 快速法
+		// 透過 Arrays.toString(一維陣列) 將資料印出
+		System.out.println( Arrays.toString(scores) );
 
 	}
 
