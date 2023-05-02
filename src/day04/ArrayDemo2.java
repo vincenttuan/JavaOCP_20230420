@@ -19,6 +19,15 @@ public class ArrayDemo2 {
 		// 2. 再計算身高的平均
 		double avgOfHeight = sumOfHeight / heights.length;
 		System.out.printf("身高總和: %.1f 身高平均: %.1f\n", sumOfHeight, avgOfHeight);
+		// 計算體重的平均
+		// 1. 先計算體重的總和
+		double sumOfWeight = 0;
+		for(double weight : weights) {
+			sumOfWeight += weight;
+		}
+		// 2. 再計算體重的平均
+		double avgOfWeight = sumOfWeight / weights.length;
+		System.out.printf("體重總和: %.1f 體重平均: %.1f\n", sumOfWeight, avgOfWeight);
 		
 	}
 }
