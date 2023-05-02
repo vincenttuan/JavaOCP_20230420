@@ -28,6 +28,23 @@ public class ArrayDemo2 {
 		// 2. 再計算體重的平均
 		double avgOfWeight = sumOfWeight / weights.length;
 		System.out.printf("體重總和: %.1f 體重平均: %.1f\n", sumOfWeight, avgOfWeight);
-		
+		//-----------------------------------------------------------------------------
+		// 透過 getAvg() 方法來取得身高的平均
+		avgOfHeight = getAvg(heights);
+		System.out.printf("身高的平均: %.1f\n", avgOfHeight);
+		// 透過 getAvg() 方法來取得體重的平均
+		avgOfWeight = getAvg(weights);
+		System.out.printf("體重的平均: %.1f\n", avgOfWeight);
 	}
+	
+	// 專門計算 double[] 平均的方法
+	public static double getAvg(double[] items) {
+		double sum = 0;
+		for(double item : items) {
+			sum += item;
+		}
+		double avg = sum / items.length;
+		return avg;
+	}
+	
 }
