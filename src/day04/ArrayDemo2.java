@@ -1,5 +1,6 @@
 package day04;
 
+import static day04.Util.getAvg;
 /*
  * 調查五位學生之身高及體重如下
  * 身高：172、168、164、170、176(公分)
@@ -37,14 +38,6 @@ public class ArrayDemo2 {
 		System.out.printf("體重的平均: %.1f\n", avgOfWeight);
 	}
 	
-	// 專門計算 double[] 平均的方法
-	public static double getAvg(double[] items) {
-		double sum = 0;
-		for(double item : items) {
-			sum += item;
-		}
-		double avg = sum / items.length;
-		return avg;
-	}
+	
 	
 }
