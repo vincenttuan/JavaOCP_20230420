@@ -6,8 +6,9 @@ public class ArrayDemo5 {
 	public static void main(String[] args) {
 		String[] names = {"John", "Vincent", "Anita", "Jo"};
 		//System.out.println(names.length);
-		// 計算名字的平均字母有幾個
-		int[] words = new int[names.length];
+		// 題目:計算名字的平均字母有幾個
+		
+		int[] words = new int[names.length]; // 存放每個名字有幾個字母的陣列
 		
 		for(int i=0;i<names.length;i++) {
 			words[i] = names[i].length();
