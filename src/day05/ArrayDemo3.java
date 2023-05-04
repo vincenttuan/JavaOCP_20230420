@@ -21,7 +21,8 @@ public class ArrayDemo3 {
 		}
 		double avg = (double)sum / count;
 		System.out.println(avg);
-		// for-each II
+		
+		// for-each II (將二組迴圈變為一組迴圈)
 		int count2 = 0;
 		int sum2 = 0;
 		for(int x : scores) {
@@ -32,6 +33,7 @@ public class ArrayDemo3 {
 		}
 		double avg2 = (double)sum2 / count2;
 		System.out.println(avg2);
+		
 		
 	}
 }
