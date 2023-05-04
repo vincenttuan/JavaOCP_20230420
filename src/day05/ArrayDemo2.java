@@ -1,5 +1,7 @@
 package day05;
 
+import java.util.Arrays;
+
 public class ArrayDemo2 {
 	public static void main(String[] args) {
 		// 分數 -1 表示缺考
@@ -13,6 +15,10 @@ public class ArrayDemo2 {
 			}
 		}
 		System.out.println(sum);
-		
+		// Java 8 stream()
+		int sum2 = Arrays.stream(scores)
+						 .filter(x -> x != -1)
+						 .sum(); // 自動將元素加總
+		System.out.println(sum2);
 	}
 }
