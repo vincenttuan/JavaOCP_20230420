@@ -1,5 +1,8 @@
 package day06;
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
 public class MultiArrayDemo7 {
 	public static void main(String[] args) {
 		
@@ -18,6 +21,18 @@ public class MultiArrayDemo7 {
         };
 		
 		// 每一個門市的年度總銷售額
+        for(int[][] area : sales) {
+        	for(int[] store : area) {
+        		System.out.println(store + " " + Arrays.stream(store).sum());
+        	}
+        }
+        
         // 門市的年度總銷售額最大與最小個為何 ?
+        IntSummaryStatistics stat = Arrays.stream(sales)
+        	  .flatMap(store -> Arrays.stream(store)) // 將區域拆掉之後就會得到 6 家門市
+        	  .mapToInt(store -> Arrays.stream(store).sum()) // 計算每個門市的年度總銷售額
+        	  .summaryStatistics();
+        System.out.println(stat.getMax());
+        System.out.println(stat.getMin());
 	}
 }
