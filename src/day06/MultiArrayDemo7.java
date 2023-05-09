@@ -34,5 +34,6 @@ public class MultiArrayDemo7 {
         	  .summaryStatistics();
         System.out.println(stat.getMax());
         System.out.println(stat.getMin());
+        System.out.println(stat);
 	}
 }
