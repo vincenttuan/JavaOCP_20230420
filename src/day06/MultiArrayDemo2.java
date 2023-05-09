@@ -10,6 +10,7 @@ public class MultiArrayDemo2 {
 			};
 		
 		System.out.println(m.length);
+		// for-loop 來抓取每一筆資料
 		for(int i=0;i<m.length;i++) {
 			System.out.println(m[i]); // m[i] 一維陣列
 			for(int k=0;k<m[i].length;k++) {
