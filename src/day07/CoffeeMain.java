@@ -1,5 +1,7 @@
 package day07;
 
+import java.util.Arrays;
+
 public class CoffeeMain {
 
 	public static void main(String[] args) {
@@ -22,6 +24,21 @@ public class CoffeeMain {
 		
 		// 請求出熱咖啡與冰咖啡的平均價格各為多少 ?
 		
+		double hotCoffeeAvgPrice =  Arrays.stream(coffees)
+										  .filter(coffee -> coffee.isHot())
+										  .mapToInt(coffee -> coffee.price)
+										  .average()
+										  .getAsDouble();
+		
+		double coldCoffeeAvgPrice =  Arrays.stream(coffees)
+				  						   .filter(coffee -> !coffee.isHot())
+				  						   .mapToInt(coffee -> coffee.price)
+				  						   .average()
+				  						   .getAsDouble();
+		
+		System.out.println(hotCoffeeAvgPrice);
+		System.out.println(coldCoffeeAvgPrice);
 	}
 
 }
+
