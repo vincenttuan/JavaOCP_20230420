@@ -20,6 +20,7 @@ public class CoffeeMain {
 		avg = sum / coffees.length;
 		System.out.println(avg);
 		
+		// 請求出熱咖啡與冰咖啡的平均價格各為多少 ?
 		
 	}
 
