@@ -28,6 +28,12 @@ public class StudentMain2 {
 		}
 		System.out.println(sum);
 		
+		// 只要印出及格的學生姓名與分數 ?
+		for(int i=0;i<students.length;i++) {
+			if(students[i].isPass()) {
+				System.out.printf("%s %d\n", students[i].name, students[i].score);
+			}
+		}
 	}
 	
 }
