@@ -54,6 +54,10 @@ public class PaperStore2 {
 									.get();
 		System.out.println("最便宜的紙 = " + cheapestPaper);
 		System.out.println("總預算費用 = " + (100 * cheapestPaper.getPrice()));
+		
+		// 難題(不會沒關係)!
+		// 如果你需要購買的紙張至少要有 3 種不同的顏色，並且你有 $60 的預算，那麼你應該如何選擇紙張？ 使紙的張數是最多 ?
+		
 	}
 
 }
