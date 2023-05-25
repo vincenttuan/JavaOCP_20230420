@@ -41,7 +41,7 @@ public class PaperStore {
 		Paper[] papers = {p1, p2, p3, p4};
 		Arrays.stream(papers).forEach(paper -> System.out.println(paper));
 		
-		
+		Arrays.stream(papers).forEach(System.out::println);
 		
 	}
 
