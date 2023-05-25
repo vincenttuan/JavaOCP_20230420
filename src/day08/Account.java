@@ -34,7 +34,7 @@ public class Account {
 	void transfer(int amount, Account act) { // 轉帳
 		withdraw(amount);    // 本身進行"提款"行為
 		act.deposit(amount); // 對方進行"存款"行為
-		System.out.printf("%s 轉帳 $%d 給 %s 成功\n", name, amount, act.getName());
+		System.out.printf("%s 轉帳 $%d 給 %s 成功\n", this.name, amount, act.getName());
 	}
 	
 	void print() { // 列印目前餘額資料
