@@ -8,6 +8,10 @@ public class AccountTest {
 		account.deposit(100);
 		account.withdraw(70);
 		account.print();
+		account.deposit(200);
+		account.withdraw(150);
+		account.withdraw(60);
+		account.print();
 	}
 
 }
