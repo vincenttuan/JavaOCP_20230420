@@ -24,6 +24,8 @@ public class Paper {
 		this.size = size;
 	}
 	
-	
+	public String toString() {
+		return color.getColorName() + "-" + size.getSizeName() + " $" + price; 
+	}
 	
 }
