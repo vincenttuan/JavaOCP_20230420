@@ -1,6 +1,7 @@
 package day08;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class PaperStore2 {
 
@@ -37,7 +38,22 @@ public class PaperStore2 {
 		
 		// A4 與 B5 哪一種比較貴 ? (A4 的平均價與 B5 的平均價格那一個貴)
 		
+		// 假設你正在籌劃一場活動, 你需要100紙來製作傳單, 那你將如何選擇紙張顏色與尺寸,使你的預算最低 ?
+		Paper lowerPaper = papers[0]; // 假設 papers[0] 是價格最低的紙
+		for(int i=1;i<papers.length;i++) {
+			if(papers[i].getPrice() < lowerPaper.getPrice()) {
+				lowerPaper = papers[i]; // 替換最小 paper
+			}
+		}
+		System.out.println("最便宜的紙 = " + lowerPaper);
+		System.out.println("總預算費用 = " + (100 * lowerPaper.getPrice()));
 		
+		// 使用 java 8
+		Paper cheapestPaper = Arrays.stream(papers)
+									.min(Comparator.comparingInt(Paper::getPrice))
+									.get();
+		System.out.println("最便宜的紙 = " + cheapestPaper);
+		System.out.println("總預算費用 = " + (100 * cheapestPaper.getPrice()));
 	}
 
 }
