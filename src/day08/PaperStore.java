@@ -43,6 +43,7 @@ public class PaperStore {
 		
 		Arrays.stream(papers).forEach(System.out::println);
 		
+		Arrays.stream(papers).forEach(Paper::print);
 	}
 
 }

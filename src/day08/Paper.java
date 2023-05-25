@@ -28,4 +28,8 @@ public class Paper {
 		return color.getColorName() + "-" + size.getSizeName() + " $" + price; 
 	}
 	
+	public void print() {
+		System.out.println(color.getColorName() + "-" + size.getSizeName() + " $" + price);
+	}
+	
 }
