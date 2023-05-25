@@ -1,5 +1,7 @@
 package day08;
 
+import java.util.Arrays;
+
 public class PaperStore {
 
 	public static void main(String[] args) {
@@ -31,7 +33,13 @@ public class PaperStore {
 		Paper p4 = new Paper();
 		p4.setColor(white);p4.setSize(a4);p4.setPrice(15);
 		
+		System.out.println(p1); // p1.toString()
+		System.out.println(p2);
+		System.out.println(p3);
+		System.out.println(p4);
+		
 		Paper[] papers = {p1, p2, p3, p4};
+		Arrays.stream(papers).forEach(paper -> System.out.println(paper));
 		
 		
 		
