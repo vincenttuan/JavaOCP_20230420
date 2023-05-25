@@ -19,7 +19,7 @@ public class Account {
 	}
 	
 	void withdraw(int amount) { // 提款
-		if(this.balance >= amount) {
+		if(amount > 0 && this.balance >= amount) {
 			this.balance -= amount;
 			System.out.printf("提款 $%d 成功\n", amount);
 		} else {
