@@ -20,6 +20,20 @@ public class Drink { // 飲料
 		this.isSugarFree = isSugarFree;
 	}
 	
+	// 商業方法-折扣
+	public void applyDiscount(double discount) {
+		if(discount > 0) {
+			this.price = this.price * discount;
+		}
+	}
+	// 商業方法-無糖飲品折扣優惠
+	public void applySugarFreeDiscountAmount(double discountAmount) {
+		if(discountAmount > 0 && this.isSugarFree) {
+			this.price = this.price - discountAmount;
+		}
+	}
+	
+	
 	// 方法封裝
 	public String getName() {
 		return name;
