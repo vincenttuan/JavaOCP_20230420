@@ -15,6 +15,11 @@ public class MyHomeSteak {
 		System.out.println(steak2.getName() + ", " + steak2.getPrice() + ", " + steak2.getDoneness());
 		System.out.println(steak3.getName() + ", " + steak3.getPrice() + ", " + steak3.getDoneness());
 		
+		Dessert dessert1 = new Dessert("紅茶", 50, Sweetness.少糖);
+		Dessert dessert2 = new Dessert("咖啡", 70, Sweetness.半糖);
+		System.out.println(dessert1);
+		System.out.println(dessert2);
+		
 	}
 
 }
