@@ -19,9 +19,14 @@ public class DrinkDemo {
 		Arrays.stream(drinks).forEach(System.out::println);
 		
 		// 若要將價格都要打 8 折, 則 Drink 要如何設計一個商業方法可以滿足此需求 ?
-		
+		Arrays.stream(drinks).forEach(drink -> drink.applyDiscount(0.8));
+		System.out.println("折扣後的資料依序印出:");
+		Arrays.stream(drinks).forEach(System.out::println);
 		
 		// 若是無糖飲料可以少5元
+		Arrays.stream(drinks).forEach(drink -> drink.applySugarFreeDiscountAmount(5));
+		System.out.println("無糖飲料優惠折扣後的資料依序印出:");
+		Arrays.stream(drinks).forEach(System.out::println);
 		
 	}
 
