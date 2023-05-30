@@ -6,6 +6,8 @@ public class MyHomeSteak {
 		Steak steak1 = new Steak(SteakName.紐約客牛排, 350, Doneness.MEDIUM);
 		Steak steak2 = new Steak(SteakName.丁骨牛排, 550, Doneness.MEDIUM_RARE);
 		Steak steak3 = new Steak(SteakName.牛小排, 450, Doneness.MEDIUM_WELL);
+		Steak steak4 = new Steak(SteakName.無骨莎朗, Doneness.MEDIUM_WELL);
+		Steak steak5 = new Steak(SteakName.紅屋牛排, Doneness.MEDIUM_WELL);
 		
 		System.out.println(steak1);
 		System.out.println(steak2);
@@ -19,6 +21,8 @@ public class MyHomeSteak {
 		Dessert dessert2 = new Dessert("咖啡", 70, Sweetness.半糖);
 		System.out.println(dessert1);
 		System.out.println(dessert2);
+		
+		
 		
 	}
 
