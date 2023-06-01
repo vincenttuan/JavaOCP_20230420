@@ -18,6 +18,7 @@ public class Zoo {
 		fish.move();
 		bird.move();
 		ostrich.move();
+		ostrich.spirit(); // 鴕鳥特有的方法
 		
 	}
 
