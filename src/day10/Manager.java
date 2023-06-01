@@ -1,5 +1,5 @@
 package day10;
 
 public class Manager extends Employee {
-	int budget = 50000; // 預算
+	int budget = 5_0000; // 預算
 }
