@@ -17,6 +17,9 @@ public class EmployeeDemo {
 		if(emp instanceof Supervisor) { // emp 所指向的是否是 Supervisor 的實例
 			System.out.println(((Supervisor)emp).stockOptions);
 		}
+		
+		Employee[] employees = {employee, manager, supervisor};
+		System.out.printf("員工人數: %d\n", employees.length);
 
 	}
 
