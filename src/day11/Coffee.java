@@ -11,5 +11,4 @@ public class Coffee extends Drink {
 		System.out.printf("開始準備 %s 咖啡\n", getName());
 	}
 	
-	
 }
