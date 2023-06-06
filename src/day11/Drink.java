@@ -1,7 +1,8 @@
 package day11;
 
-// 飲料: 基礎類
-public class Drink {
+// 飲料: 基礎類(抽象)
+public abstract class Drink {
+	
 	private String name;
 	private int price;
 	
@@ -26,9 +27,8 @@ public class Drink {
 		this.price = price;
 	}
 	
-	public void prepare() {
-		System.out.println("飲料準備的方式...");
-	}
+	// 抽象方法
+	public abstract void prepare();
 
 	@Override
 	public String toString() {

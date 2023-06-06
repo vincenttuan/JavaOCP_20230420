@@ -8,8 +8,7 @@ public class Juice extends Drink {
 
 	@Override
 	public void prepare() {
-		// TODO Auto-generated method stub
-		super.prepare();
+		System.out.printf("開始準備 %s 果汁\n", getName());
 	}
 	
 }

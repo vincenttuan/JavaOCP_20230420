@@ -6,6 +6,9 @@ import java.util.Comparator;
 public class DrinkStore {
 
 	public static void main(String[] args) {
+		Drink drink = new Drink("飲料", 10);
+		
+		
 		Drink coffee = new Coffee("Latte", 65);
 		Drink blackTea = new Tea("紅茶", 16);
 		Drink greenTea = new Tea("綠茶", 17);
