@@ -10,7 +10,8 @@ public class DrinkStore {
 		Drink watermelon = new Juice("西瓜汁", 40);
 		Drink espresso = new Espresso("Espresso", 75, 2);
 		
-		
+		Drink[] drinks = {coffee, blackTea, greenTea, orange, watermelon, espresso};
+		// 請問哪一種飲料最便宜, 最貴, 平均價格
 		
 	}
 
