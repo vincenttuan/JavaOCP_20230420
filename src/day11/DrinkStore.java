@@ -1,5 +1,8 @@
 package day11;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class DrinkStore {
 
 	public static void main(String[] args) {
@@ -12,7 +15,21 @@ public class DrinkStore {
 		
 		Drink[] drinks = {coffee, blackTea, greenTea, orange, watermelon, espresso};
 		// 請問哪一種飲料最便宜, 最貴, 平均價格
+		Drink cheapestDrink = Arrays.stream(drinks)
+				.min(Comparator.comparingInt(Drink::getPrice))
+				.orElse(null);
+		System.out.printf("最便宜: %s %d\n", cheapestDrink.getName(), cheapestDrink.getPrice());
 		
+		Drink mostExpensiveDrink = Arrays.stream(drinks)
+				.max(Comparator.comparingInt(Drink::getPrice))
+				.orElse(null);
+		System.out.printf("最貴的: %s %d\n", mostExpensiveDrink.getName(), mostExpensiveDrink.getPrice());
+		
+		double averagePrice = Arrays.stream(drinks)
+				.mapToInt(Drink::getPrice)
+				.average()
+				.orElse(0);
+		System.out.printf("平均價格: %.1f\n", averagePrice);
 	}
 
 }
