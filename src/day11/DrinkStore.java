@@ -2,6 +2,8 @@ package day11;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class DrinkStore {
 
@@ -32,7 +34,19 @@ public class DrinkStore {
 		System.out.printf("平均價格: %.1f\n", averagePrice);
 		
 		// Coffee類, Tea類, Juice類 每一組各找一杯最便宜的飲料, 並算出總和
+		int total = Arrays.stream(drinks).collect(Collectors.groupingBy(d -> {
+		    if (d instanceof Coffee) {
+		        return "Coffee";
+		    } else if (d instanceof Tea) {
+		        return "Tea";
+		    } else if (d instanceof Juice) {
+		        return "Juice";
+		    } else {
+		        return "Unknown";
+		    }
+		}, Collectors.minBy(Comparator.comparingInt(Drink::getPrice)))).values().stream().filter(Optional::isPresent).mapToInt(d -> d.get().getPrice()).sum();
 		
+		System.out.println(total);
 	}
 
 }
