@@ -8,6 +8,18 @@ public class Pen {
 		this.color = color;
 		this.price = price;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Pen p = (Pen)obj;
+		// 寫一個比較的判斷
+		if(color.equals(p.color) && price == p.price) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 
 	public String getColor() {
 		return color;
