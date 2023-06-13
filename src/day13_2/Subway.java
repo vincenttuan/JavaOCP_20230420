@@ -13,9 +13,11 @@ public class Subway {
 	public static void main(String[] args) {
 		Food food = new Bread();
 		food = new Ham(food);
+		food = new Ham(food);
 		food = new Lettuce(food);
 		food = new Egg(food);
 		food = new Egg(food);
+		food = new Beef(food);
 		food = new Beef(food);
 		food = new Olives(food);
 		food = new Olives(food);
