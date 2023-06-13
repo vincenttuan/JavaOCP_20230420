@@ -15,6 +15,11 @@ public class Tea extends AbstractBeverage {
 	public double getCost() {
 		return cost;
 	}
+
+	@Override
+	public String toString() {
+		return "Tea [name=" + name + ", cost=" + cost + "]";
+	}
 	
 }
  
