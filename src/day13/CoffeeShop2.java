@@ -8,7 +8,13 @@ public class CoffeeShop2 {
 		coffee = new SugarDecorator(coffee);
 		
 		System.out.printf("%s $%.1f\n", coffee.getName(), coffee.getCost());
-
+		
+		Beverage tea = new Tea("紅茶", 15);
+		tea = new MilkDecorator(tea);
+		tea = new SugarDecorator(tea);
+		
+		System.out.printf("%s $%.1f\n", tea.getName(), tea.getCost());
+		
 	}
 
 }
