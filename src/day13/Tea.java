@@ -1,0 +1,20 @@
+package day13;
+
+public class Tea extends AbstractBeverage {
+
+	protected Tea(String name, double cost) {
+		super(name, cost);
+	}
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public double getCost() {
+		return cost;
+	}
+	
+}
+ 
