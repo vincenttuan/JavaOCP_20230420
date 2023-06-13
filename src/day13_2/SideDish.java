@@ -15,7 +15,7 @@ public class SideDish extends Food {
 
 	@Override
 	public int getPrice() {
-		return price + food.price;
+		return price + food.getPrice();
 	}
 	
 }
