@@ -1,9 +1,9 @@
 package day13;
 
 public class SugarDecorator implements BeverageDecorator {
-	private AbstractBeverage beverage;
+	private Beverage beverage;
 	
-	public SugarDecorator(AbstractBeverage beverage) {
+	public SugarDecorator(Beverage beverage) {
 		this.beverage = beverage;
 	}
 

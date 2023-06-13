@@ -1,9 +1,9 @@
 package day13;
 
 public class MilkDecorator implements BeverageDecorator {
-	private AbstractBeverage beverage; // 裝飾目標
+	private Beverage beverage; // 裝飾目標
 	
-	public MilkDecorator(AbstractBeverage beverage) {
+	public MilkDecorator(Beverage beverage) {
 		this.beverage = beverage;
 	}
 
