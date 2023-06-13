@@ -9,7 +9,7 @@ public class MilkDecorator implements BeverageDecorator {
 
 	@Override
 	public String getName() {
-		return "牛奶";
+		return beverage.getName() + "牛奶";
 	}
 
 	@Override
