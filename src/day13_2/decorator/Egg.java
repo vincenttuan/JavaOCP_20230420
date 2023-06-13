@@ -7,8 +7,9 @@ public class Egg extends SideDish {
 
 	public Egg(Food food) {
 		super(food);
-		name = "雞蛋";
-		price = 20;
+		Arg arg = Arg.Egg;
+		name = arg.getName();
+		price = arg.getPrice();
 	}
 	
 }

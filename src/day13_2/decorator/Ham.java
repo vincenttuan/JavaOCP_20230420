@@ -7,8 +7,9 @@ public class Ham extends SideDish {
 
 	public Ham(Food food) {
 		super(food);
-		name = "火腿";
-		price = 30;
+		Arg arg = Arg.Ham;
+		name = arg.getName();
+		price = arg.getPrice();
 	}
 	
 }

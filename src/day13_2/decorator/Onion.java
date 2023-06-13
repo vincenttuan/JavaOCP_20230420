@@ -7,8 +7,9 @@ public class Onion extends SideDish {
 
 	public Onion(Food food) {
 		super(food);
-		name = "洋蔥";
-		price = 5;
+		Arg arg = Arg.Onion;
+		name = arg.getName();
+		price = arg.getPrice();
 	}
 
 }
