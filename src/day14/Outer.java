@@ -7,6 +7,7 @@ public class Outer {
 	// 一般內部類別
 	public class Inner {
 		int x = 77; // Inner 的物件變數
+		//static int sx = 99; // Inner 不可以有類別成員
 		public void hello() {
 			int x = 777; // 區域變數
 			System.out.println("Hello Inner Class");
@@ -16,7 +17,7 @@ public class Outer {
 			System.out.println("Outer 的類別變數 sx = " + Outer.sx);
 		}
 	}
-	
+		
 	// 一般方法
 	public void foo() {
 		// 若方法的區域變數要給方法內部類別使用, 則該變數具備 final 的特性
