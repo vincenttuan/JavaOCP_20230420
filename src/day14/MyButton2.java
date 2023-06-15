@@ -14,7 +14,12 @@ public class MyButton2 extends JFrame {
 	public MyButton2() {
 		button = new JButton("Click Me");
 		// 設定 button 監聽器(按一下要做的事情) - 請用 Lambda 語法實現
+		//ActionListener actionListener = (ActionEvent e) -> System.out.println("Button clicked !");
+		//ActionListener actionListener = e -> System.out.println("Button clicked !");
+		//button.addActionListener(actionListener);
 		
+		// Lambda 可以直接當參數使用
+		button.addActionListener(e -> System.out.println("Button clicked !"));
 		
 		// 配置 button 元件到 JFrame 中
 		super.getContentPane().add(button);
