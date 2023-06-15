@@ -13,7 +13,7 @@ public class Outer {
 			System.out.println("區域變數 x = " + x);
 			System.out.println("Inner 的物件變數 x = " + this.x);
 			System.out.println("Outer 的物件變數 x = " + Outer.this.x); // 內部類別才有的特殊寫法
-			System.out.println("Outer 的物件變數 sx = " + Outer.sx);
+			System.out.println("Outer 的類別變數 sx = " + Outer.sx);
 		}
 	}
 	
