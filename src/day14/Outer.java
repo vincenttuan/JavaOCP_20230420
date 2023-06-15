@@ -19,10 +19,12 @@ public class Outer {
 	
 	// 一般方法
 	public void foo() {
+		// 若方法的區域變數要給方法內部類別使用, 則該變數具備 final 的特性
+		int money = 100;
 		// 方法內部類別
 		class Bar {
 			void hello() {
-				System.out.println("Hello Bar");
+				System.out.println("Hello Bar " + money);
 			}
 		}
 		// 建立方法內部類別物件
