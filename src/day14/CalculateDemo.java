@@ -21,8 +21,15 @@ public class CalculateDemo {
 		System.out.println(calcMulti.operation(10, 20));
 		
 		// 利用 Lambda 語法
-		Calculate calcDiv = (double x, double y) -> x / y;
-		System.out.println(calcDiv.operation(10, 20));
+		Calculate calcDiv1 = (double x, double y) -> { 
+			return x / y;
+		};
+		
+		Calculate calcDiv2 = (x, y) -> x / y;
+		
+		
+		System.out.println(calcDiv1.operation(10, 20));
+		System.out.println(calcDiv2.operation(10, 20));
 		
 		
 	}
