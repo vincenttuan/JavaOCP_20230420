@@ -19,6 +19,7 @@ public class MyButton extends JFrame {
 		
 		// 配置 button 元件到 JFrame 中
 		super.getContentPane().add(button);
+		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 關閉視窗連同程序也一起關閉
 		super.pack();
 		super.setVisible(true);
 	}
