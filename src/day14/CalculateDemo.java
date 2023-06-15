@@ -8,7 +8,17 @@ public class CalculateDemo {
 		
 		Calculate calcSub = new CalculateSub();
 		System.out.println(calcSub.operation(10, 20));
-
+		
+		Calculate calcAdd2 = new Calculate() {
+			
+			@Override
+			public double operation(double x, double y) {
+				return x * y;
+			}
+			
+		};
+		System.out.println(calcAdd2.operation(10, 20));
+		
 	}
 
 }
