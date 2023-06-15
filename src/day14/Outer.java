@@ -17,10 +17,24 @@ public class Outer {
 		}
 	}
 	
+	// 一般方法
+	public void foo() {
+		// 方法內部類別
+		class Bar {
+			void hello() {
+				System.out.println("Hello Bar");
+			}
+		}
+		// 建立方法內部類別物件
+		Bar bar = new Bar();
+		bar.hello();
+	}
+	
 	public static void main(String[] args) {
 		Outer ou = new Outer();
 		Outer.Inner in = ou.new Inner();
 		in.hello();
+		ou.foo();
 	}
 	
 }
