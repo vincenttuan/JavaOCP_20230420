@@ -1,6 +1,6 @@
 package day14;
 
-public class CalculateImpl implements Calculate {
+public class CalculateAdd implements Calculate {
 
 	@Override
 	public double operation(double x, double y) {
