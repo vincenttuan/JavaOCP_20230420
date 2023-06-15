@@ -24,8 +24,8 @@ public class MyButton extends JFrame {
 		super.setVisible(true);
 	}
 	
-	// 建立一個 Button 監聽器
-	class ButtonOnClickListener implements ActionListener {
+	// 建立一個 Button 監聽器(內部類別)
+	private class ButtonOnClickListener implements ActionListener {
 		// 按一下要做的事情
 		@Override
 		public void actionPerformed(ActionEvent e) {
