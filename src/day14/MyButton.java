@@ -1,5 +1,8 @@
 package day14;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -10,11 +13,23 @@ public class MyButton extends JFrame {
 	
 	public MyButton() {
 		button = new JButton("Click Me");
+		// 設定 button 監聽器(按一下要做的事情)
+		ButtonOnClickListener buttonOnClickListener = new ButtonOnClickListener();
+		button.addActionListener(buttonOnClickListener);
 		
 		// 配置 button 元件到 JFrame 中
 		super.getContentPane().add(button);
 		super.pack();
 		super.setVisible(true);
+	}
+	
+	// 建立一個 Button 監聽器
+	class ButtonOnClickListener implements ActionListener {
+		// 按一下要做的事情
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Button clicked !");
+		}
 	}
 	
 	
