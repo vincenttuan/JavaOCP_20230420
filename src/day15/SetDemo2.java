@@ -22,6 +22,8 @@ public class SetDemo2 {
 		}
 		System.out.println("sum = " + sum);
 		
+		//sum = set.stream().mapToInt(value -> value.intValue()).sum();
+		sum = set.stream().mapToInt(Integer::intValue).sum();
 		
 	}
 }
