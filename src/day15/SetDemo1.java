@@ -52,6 +52,14 @@ public class SetDemo1 {
 			}
 		}
 		System.out.println("sum = " + sum);
+		
+		// 請計算出 set 集合中所有分數的總和 = ? 使用 stream
+		sum = set.stream()
+				.filter(value -> value instanceof Integer)
+				.mapToInt(value -> (Integer)value)
+				.sum();
+		System.out.println("sum = " + sum);
+		
 	}
 
 }
