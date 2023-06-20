@@ -42,8 +42,16 @@ public class SetDemo1 {
 		}
 		System.out.println("sum = " + sum);
 		
-		
-		
+		// 請計算出 set 集合中所有分數的總和 = ?
+		iter = set.iterator();
+		sum = 0;
+		while(iter.hasNext()) {
+			Object value = iter.next();
+			if(value instanceof Integer) {
+				sum += (Integer)value;
+			}
+		}
+		System.out.println("sum = " + sum);
 	}
 
 }
