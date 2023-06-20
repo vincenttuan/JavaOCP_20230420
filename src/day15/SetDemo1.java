@@ -31,6 +31,8 @@ public class SetDemo1 {
 			}
 		}
 		
+		// 請計算出 set 集合中所有分數的總和 = ?
+		
 		
 	}
 
