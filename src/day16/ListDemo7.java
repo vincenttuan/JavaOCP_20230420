@@ -18,6 +18,15 @@ public class ListDemo7 {
 		System.out.println(intersection); // [4, 5]
 		
 		// 請將所有有購買的商品找出(不重複) (product1 與 product2 聯集)
+		Set<Integer> union = new LinkedHashSet<>(list1);
+		union.addAll(list2);
+		System.out.println(union); // [1, 2, 3, 4, 5, 6, 7, 8]
+		
+		// 請將有列在 list1 但不列在 list2 的商品(不重複) (product1 與 product2 差集)
+		Set<Integer> difference = new LinkedHashSet<>(list1);
+		difference.removeAll(list2);
+		System.out.println(difference); // [1, 2, 3]
+		
 		
 		
 	}
