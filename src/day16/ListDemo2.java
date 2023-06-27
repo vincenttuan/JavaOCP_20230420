@@ -13,8 +13,8 @@ public class ListDemo2 {
 		System.out.println(list.get(1));
 		//list.set(1, 99); // 支援:不可變集合, 不支援:不可修改集合
 		//System.out.println(list);
-		//list.add(70); // 不可變集合不可增加元素
-		//list.remove(1); // 不可變集合不可移除元素
+		//list.add(70); // "不可變集合"與"不可修改集合"皆不可"增加"元素
+		//list.remove(1); // "不可變集合"與"不可修改集合"皆不可"移除"元素
 		
 	}
 }
