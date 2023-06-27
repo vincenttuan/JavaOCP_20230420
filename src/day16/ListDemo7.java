@@ -11,11 +11,13 @@ public class ListDemo7 {
 		List<Integer> list2 = Arrays.asList(4, 5, 6, 7, 8);
 		System.out.println(list1);
 		System.out.println(list2);
-		// 請將受歡迎的商品找出 (product1 與 product2 都有的商品)
-		Set<Integer> ans = new LinkedHashSet<>(list1);
-		ans.retainAll(list2);
-		System.out.println(ans);
 		
+		// 請將受歡迎的商品找出 (product1 與 product2 都有的商品 交集)
+		Set<Integer> intersection = new LinkedHashSet<>(list1);
+		intersection.retainAll(list2);
+		System.out.println(intersection); // [4, 5]
+		
+		// 請將所有有購買的商品找出(不重複) (product1 與 product2 聯集)
 		
 		
 	}
