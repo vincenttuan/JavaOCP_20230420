@@ -11,7 +11,7 @@ public class ListDemo2 {
 		List<Integer> list = List.of(100, 90, 80); // Java 9 支援 List.of()
 		System.out.println(list);
 		System.out.println(list.get(1));
-		//list.set(1, 99);
+		//list.set(1, 99); // 支援:不可變集合, 不支援:不可修改集合
 		//System.out.println(list);
 		//list.add(70); // 不可變集合不可增加元素
 		//list.remove(1); // 不可變集合不可移除元素
