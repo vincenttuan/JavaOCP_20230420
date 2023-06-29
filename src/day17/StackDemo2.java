@@ -8,7 +8,7 @@ public class StackDemo2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("請輸入字串: ");
-		String str = scanner.next();
+		String str = scanner.next(); // "Java"
 		
 		Stack<Character> stack = new Stack<>();
 		for(char c : str.toCharArray()) {  // "Java" -> {'J', 'a', 'v', 'a'}
