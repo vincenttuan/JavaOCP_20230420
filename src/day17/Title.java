@@ -18,7 +18,7 @@ public class Title {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(level, name);
+		return Objects.hash(name);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class Title {
 		if (getClass() != obj.getClass())
 			return false;
 		Title other = (Title) obj;
-		return Objects.equals(level, other.level) && Objects.equals(name, other.name);
+		return Objects.equals(name, other.name);
 	}
 
 	public Integer getLevel() {
