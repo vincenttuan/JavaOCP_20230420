@@ -14,6 +14,8 @@ public class Test1 {
 		// 取得所有員工
 		List<Employee> employees = dataCenter.getEmployees();
 		System.out.println(employees);
+		// 請問經理(含)以上的平均薪資 ?
+		
 	}
 
 }
