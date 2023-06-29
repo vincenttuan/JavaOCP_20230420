@@ -1,6 +1,8 @@
 package day17;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 // 資料中心(SingleTon 單例模式)
@@ -9,10 +11,10 @@ public class DataCenter {
 	private static DataCenter _instance = new DataCenter();
 	
 	private Set<Title> titles = new LinkedHashSet<>();
+	private List<Employee> employees = new ArrayList<>();
 	
 	private DataCenter() {
 		titles.add(new Title(1, "專員"));
-		titles.add(new Title(2, "專員"));
 		titles.add(new Title(2, "襄理"));
 		titles.add(new Title(3, "副理"));
 		titles.add(new Title(4, "經理"));
