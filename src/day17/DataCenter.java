@@ -20,6 +20,24 @@ public class DataCenter {
 		titles.add(new Title(4, "經理"));
 		titles.add(new Title(5, "協理"));
 		titles.add(new Title(6, "副總"));
+		
+		employees.add(new Employee("John",  40000L,  getTitle(1)));
+		employees.add(new Employee("Mary",  50000L,  getTitle(2)));
+		employees.add(new Employee("Bob",   60000L,  getTitle(3)));
+		employees.add(new Employee("Jack",  70000L,  getTitle(4)));
+		employees.add(new Employee("Rose",  80000L,  getTitle(4)));
+		employees.add(new Employee("Helen", 90000L,  getTitle(5)));
+		employees.add(new Employee("Micro", 45000L,  getTitle(1)));
+		employees.add(new Employee("Mark",  55000L,  getTitle(2)));
+		employees.add(new Employee("James", 65000L,  getTitle(3)));
+		employees.add(new Employee("Anita", 120000L, getTitle(6)));
+	}
+	
+	public Title getTitle(Integer level) {
+		return titles.stream()
+				     .filter(title -> title.getLevel().equals(level))
+				     .findFirst()
+				     .get();
 	}
 	
 	public static DataCenter getInstance() {
