@@ -13,7 +13,13 @@ public class MapDemo1 {
 		System.out.println(telBook);
 		// 我要打電話給 John
 		System.out.println(telBook.get("John"));
-
+		// 請問電話簿裏面03的有誰 ?
+		for(Map.Entry<String, String> entry : telBook.entrySet() ) {
+			if(entry.getValue().startsWith("03")) {
+				System.out.println(entry.getKey());
+			}
+		}
+		
 	}
 
 }
