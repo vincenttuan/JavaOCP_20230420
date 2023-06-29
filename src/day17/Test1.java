@@ -11,7 +11,8 @@ public class Test1 {
 		Set<Title> titles = dataCenter.getTitles();
 		System.out.println(titles);
 		// 取得所有員工
-		Set<Employee> employees = da
+		Set<Employee> employees = dataCenter.getEmployees();
+		System.out.println(employees);
 	}
 
 }
