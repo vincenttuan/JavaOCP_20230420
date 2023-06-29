@@ -12,6 +12,7 @@ public class DataCenter {
 	
 	private DataCenter() {
 		titles.add(new Title(1, "專員"));
+		titles.add(new Title(1, "專員"));
 		titles.add(new Title(2, "襄理"));
 		titles.add(new Title(3, "副理"));
 		titles.add(new Title(4, "經理"));
