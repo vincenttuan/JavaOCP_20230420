@@ -15,6 +15,12 @@ public class Test1 {
 		List<Employee> employees = dataCenter.getEmployees();
 		System.out.println(employees);
 		// 請問經理(含)以上的平均薪資 ?
+		double avg = employees.stream()
+								.filter(emp -> emp.getTitle().getLevel() >= 4)
+								.mapToLong(Employee::getSalary)
+								.average()
+								.getAsDouble();
+		System.out.println(avg);
 		
 	}
 
