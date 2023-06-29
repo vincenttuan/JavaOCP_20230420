@@ -57,4 +57,8 @@ public class DataCenter {
 		return titles;
 	}
 	
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+	
 }

@@ -10,7 +10,8 @@ public class Test1 {
 		DataCenter dataCenter = getInstance();
 		Set<Title> titles = dataCenter.getTitles();
 		System.out.println(titles);
-		
+		// 取得所有員工
+		Set<Employee> employees = da
 	}
 
 }
