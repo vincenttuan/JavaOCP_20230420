@@ -3,6 +3,7 @@ package day17;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 // 資料中心(SingleTon 單例模式)
@@ -34,10 +35,18 @@ public class DataCenter {
 	}
 	
 	public Title getTitle(Integer level) {
+		 /*
+		 Optional<Title> titleOpt = titles.stream()
+				     					  .filter(title -> title.getLevel().equals(level))
+				     					  .findFirst();
+		 return titleOpt.isPresent() ? titleOpt.get() : null;
+		 */
+		
 		return titles.stream()
-				     .filter(title -> title.getLevel().equals(level))
-				     .findFirst()
-				     .get();
+				  .filter(title -> title.getLevel().equals(level))
+				  .findFirst()
+				  .orElseGet(null);
+		
 	}
 	
 	public static DataCenter getInstance() {
