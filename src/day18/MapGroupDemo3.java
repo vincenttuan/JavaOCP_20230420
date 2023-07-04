@@ -25,10 +25,12 @@ public class MapGroupDemo3 {
 				new Fruit("mango",     10, 29.99)
 		);
 		
-		// 每一種水果各有幾箱
+		// 每一種水果各有幾箱 ?
 		Map<String, Long> map1 = fruits.stream()
 				.collect(Collectors.groupingBy(Fruit::getName, Collectors.counting()));
 		System.out.println(map1);
+		
+		// 每一種水果各有顆/個 ?
 		
 	}
 
