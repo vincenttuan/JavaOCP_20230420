@@ -7,6 +7,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 // 利用 Map 進行群組與分類 (必考)
 public class MapGroupDemo1 {
@@ -31,6 +33,10 @@ public class MapGroupDemo1 {
 		}
 		System.out.println(map);
 		
+		// 解法 2: 進行群組與分類
+		Map<String, Long> map2 = fruits.stream()
+									   .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(map2);
 		
 	}
 	
