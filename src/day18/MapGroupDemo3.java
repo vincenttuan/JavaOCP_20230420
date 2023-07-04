@@ -29,7 +29,7 @@ public class MapGroupDemo3 {
 		Map<String, Long> map1 = fruits.stream()
 				.collect(Collectors.groupingBy(Fruit::getName, Collectors.counting()));
 		System.out.println(map1);
-
+		
 	}
 
 }
