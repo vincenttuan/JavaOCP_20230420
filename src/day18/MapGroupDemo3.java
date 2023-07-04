@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toSet;
-
+import static java.util.stream.Collectors.toList;
 public class MapGroupDemo3 {
 
 	public static void main(String[] args) {
@@ -59,10 +59,14 @@ public class MapGroupDemo3 {
 									mapping(Fruit::getName, collectingAndThen(toSet(), names -> String.join(", ", names)))));
 		System.out.println(groupByPrice3);
 		
+		// 建議使用方式
 		Map<Double, Set<String>> groupByPrice4 = fruits.stream()
 													   .collect(groupingBy(Fruit::getPrice, 
 															   			   mapping(Fruit::getName, toSet())));
 		System.out.println(groupByPrice4);
+		
+		// 請問每一種水果各買進多少錢(該水果總數 * 該水果價格) ?
+		
 	}
 
 }
