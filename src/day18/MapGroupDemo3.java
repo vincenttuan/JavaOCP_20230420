@@ -31,6 +31,16 @@ public class MapGroupDemo3 {
 		System.out.println(map1);
 		
 		// 每一種水果各有顆/個 ?
+		Map<String, Long> map2 = fruits.stream()
+				.collect(Collectors.groupingBy(Fruit::getName, Collectors.summingLong(Fruit::getQty)));
+		System.out.println(map2);
+		
+		// 每一個價位各有哪些水果 ?
+		// 9.99=[apple], 19.99=[banana, papaya, pineapple], 29.99=[mango, orange]
+		// 先根據 price 分類
+		Map<Double, List<Fruit>> groupByPrice = fruits.stream()
+				.collect(Collectors.groupingBy(Fruit::getPrice));
+		System.out.println(groupByPrice);
 		
 	}
 

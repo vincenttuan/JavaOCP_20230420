@@ -39,6 +39,11 @@ public class Fruit {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return "Fruit [name=" + name + ", qty=" + qty + ", price=" + price + "]";
+	}
 	
 	
 }
