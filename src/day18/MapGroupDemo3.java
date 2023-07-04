@@ -42,6 +42,19 @@ public class MapGroupDemo3 {
 				.collect(Collectors.groupingBy(Fruit::getPrice));
 		System.out.println(groupByPrice);
 		
+		Map<Double, String> groupByPrice2 = fruits.stream()
+				.collect(Collectors.groupingBy(Fruit::getPrice, 
+											   Collectors.mapping(Fruit::getName, 
+													   			  Collectors.joining(", "))));
+		System.out.println(groupByPrice2);
+		
+		Map<Double, String> groupByPrice3 = fruits.stream()
+				.collect(Collectors.groupingBy(Fruit::getPrice, 
+											   Collectors.mapping(Fruit::getName, 
+													   			  Collectors.collectingAndThen(Collectors.toSet(), 
+													   					  					   names -> String.join(", ", names)))));
+		System.out.println(groupByPrice3);
+		
 	}
 
 }
