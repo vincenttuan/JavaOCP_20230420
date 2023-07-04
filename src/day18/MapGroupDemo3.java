@@ -9,10 +9,14 @@ import java.util.stream.Collectors;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.summingLong;
+import static java.util.stream.Collectors.summingDouble;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toSet;
+
+import java.math.BigDecimal;
+
 import static java.util.stream.Collectors.toList;
 public class MapGroupDemo3 {
 
@@ -66,7 +70,23 @@ public class MapGroupDemo3 {
 		System.out.println(groupByPrice4);
 		
 		// 請問每一種水果各買進多少錢(該水果總數 * 該水果價格) ?
+		Map<String, Double> map3 = fruits.stream()
+				.collect(groupingBy(Fruit::getName, summingDouble(fruit -> fruit.getQty() * fruit.getPrice())));
+		System.out.println(map3);
 		
+		// IEEE 754
+		System.out.println((0.1 + 0.1) == 0.2);
+		System.out.println(0.1 + 0.1);
+		
+		System.out.println((0.1 + 0.1 + 0.1) == 0.3);
+		System.out.println(0.1 + 0.1 + 0.1);
+		
+		// 可以使用 BigDecimal 解決
+		BigDecimal a = new BigDecimal("0.1");
+		BigDecimal b = new BigDecimal("0.1");
+		BigDecimal c = new BigDecimal("0.1");
+		System.out.println(a.add(b).add(c).doubleValue());
+		System.out.println(a.add(b).add(c).doubleValue() == 0.3);
 	}
 
 }
