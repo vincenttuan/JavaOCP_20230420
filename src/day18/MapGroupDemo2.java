@@ -1,12 +1,10 @@
 package day18;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -26,7 +24,14 @@ public class MapGroupDemo2 {
 				   .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 		System.out.println(unsortedMap); // 只有分類但尚未排序
 		
-		
+		// 解法 1:
+		Map<String, Long> sortedMap = new LinkedHashMap<>(); // 用來存放排序好的元素
+		unsortedMap.entrySet()
+				   .stream()
+				   .sorted(Map.Entry.<String, Long>comparingByValue() // 根據 value 來排
+						   .reversed()) // 反序
+				   		   .forEachOrdered(e -> sortedMap.put(e.getKey(), e.getValue())); // 逐一將排好的元素放入到 sortedMap 集合中
+		System.out.println(sortedMap);	// 有分類有排序		
 		
 	}
 	
