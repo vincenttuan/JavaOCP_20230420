@@ -2,6 +2,9 @@ package day18;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MapGroupDemo3 {
 
@@ -23,7 +26,9 @@ public class MapGroupDemo3 {
 		);
 		
 		// 每一種水果各有幾箱
-		
+		Map<String, Long> map1 = fruits.stream()
+				.collect(Collectors.groupingBy(Fruit::getName, Collectors.counting()));
+		System.out.println(map1);
 
 	}
 
