@@ -3,6 +3,7 @@ package day18;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -55,6 +56,10 @@ public class MapGroupDemo3 {
 													   					  					   names -> String.join(", ", names)))));
 		System.out.println(groupByPrice3);
 		
+		Map<Double, Set<String>> groupByPrice4 = fruits.stream()
+													   .collect(Collectors.groupingBy(Fruit::getPrice, 
+															   						  Collectors.mapping(Fruit::getName, Collectors.toSet())));
+		System.out.println(groupByPrice4);
 	}
 
 }
