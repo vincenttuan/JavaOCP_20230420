@@ -22,7 +22,14 @@ public class ExceptionDemo4 {
 		do {
 			try {
 				System.out.print(message);
-				return scanner.nextDouble();
+				double positiveDouble = scanner.nextDouble();
+				// 判斷是否是正數
+				if(positiveDouble <= 0) {
+					// 不是正數就建立一個例外物件
+					InputMismatchException ime = new InputMismatchException();
+					throw ime;
+				}
+				return positiveDouble;
 			} catch (InputMismatchException e) {
 				scanner.nextLine(); // 取得新的一行資料
 				System.out.println(errorMessage);
