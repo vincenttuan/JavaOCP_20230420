@@ -19,7 +19,7 @@ public class ExceptionDemo4 {
 	}
 	
 	public static double getInputData(Scanner scanner, String message, String errorMessage) {
-		while (true) {
+		do {
 			try {
 				System.out.print(message);
 				return scanner.nextDouble();
@@ -28,7 +28,7 @@ public class ExceptionDemo4 {
 				System.out.println(errorMessage);
 				continue;
 			}
-		}
+		} while(true);
 	}
 
 }
