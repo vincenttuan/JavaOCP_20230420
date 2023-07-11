@@ -32,7 +32,8 @@ public class User {
 	}
 	
 	public static void main(String[] args) {
-		
+		System.out.println(User.users);
+		System.out.println(User.loginCheck("John", "1234"));
 	}
 	
 }
