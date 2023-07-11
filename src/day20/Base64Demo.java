@@ -1,6 +1,5 @@
 package day20;
 
-import java.nio.charset.Charset;
 import java.util.Base64;
 
 public class Base64Demo {
