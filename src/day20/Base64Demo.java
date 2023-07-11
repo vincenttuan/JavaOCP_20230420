@@ -5,7 +5,7 @@ import java.util.Base64;
 public class Base64Demo {
 
 	public static void main(String[] args) {
-		String clearText = "1234"; // 明文
+		String clearText = "我愛你"; // 明文
 		System.out.println("明文:" + clearText);
 		// 編碼
 		String encodeText = Base64.getEncoder().encodeToString(clearText.getBytes());
