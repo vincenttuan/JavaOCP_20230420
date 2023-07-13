@@ -7,12 +7,13 @@ import java.util.Random;
 public class JobMain2 {
 	public static void main(String[] args) {
 		// 取得現在時間的工作
-		Runnable jobTime = () -> System.out.println(new Date());
+		Runnable jobTime = () -> System.out.printf("%s:%s\n", Thread.currentThread().getName(), new Date());
 		// 取得開獎號碼的工作
 		Runnable jobLotto = () -> {
+			String threadName = Thread.currentThread().getName();
 			Random random = new Random();
 			int lottoNumber = random.nextInt(99) + 1; // 1~99
-			System.out.println(lottoNumber);
+			System.out.printf("%s:%s\n", threadName, lottoNumber);
 		};
 		// 建立執行緒
 		Thread t1 = new Thread(jobTime, "現在時間");
