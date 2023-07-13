@@ -11,7 +11,7 @@ public class JobMain {
 		// 建立執行緒並指派(放入)要做的工作
 		Thread t1 = new Thread(jobA);
 		Thread t2 = new Thread(jobB);
-		// 設定執行緒名稱
+		// 設定子執行緒名稱
 		t1.setName("Thread-John");
 		t2.setName("Thread-Mary");
 		// 開始運行 start()
