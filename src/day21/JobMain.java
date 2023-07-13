@@ -20,6 +20,8 @@ public class JobMain {
 		// 設定權限
 		//t1.setPriority(1); // 1~10 預設 5
 		//t2.setPriority(10);
+		t1.setPriority(Thread.MIN_PRIORITY); // 1
+		t2.setPriority(Thread.MAX_PRIORITY); // 10
 		// 開始運行 start()
 		t1.start();
 		t2.start();
