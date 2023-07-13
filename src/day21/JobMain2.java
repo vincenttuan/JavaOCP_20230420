@@ -23,6 +23,5 @@ public class JobMain2 {
 		t2.start();
 		
 		
-		
 	}
 }
