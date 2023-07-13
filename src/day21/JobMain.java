@@ -12,11 +12,17 @@ public class JobMain {
 		Thread t1 = new Thread(jobA);
 		Thread t2 = new Thread(jobB);
 		// 設定子執行緒名稱
-		t1.setName("Thread-John");
-		t2.setName("Thread-Mary");
+		t1.setName("兔子");
+		t2.setName("烏龜");
+		// 設定執行緒為背景執行緒
+		//t1.setDaemon(true);
+		//t2.setDaemon(true);
+		// 設定權限
+		//t1.setPriority(1); // 1~10 預設 5
+		//t2.setPriority(10);
 		// 開始運行 start()
 		t1.start();
 		t2.start();
-		
+		System.out.println("End!");
 	}
 }
