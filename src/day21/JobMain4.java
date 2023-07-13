@@ -14,7 +14,7 @@ public class JobMain4 {
 				.collect(Collectors.toSet());
 		
 		Set<Thread> threads = jobs.stream()
-				.map(job -> new Thread(job))
+				.map(Thread::new) // .map(job -> new Thread(job))
 				.collect(Collectors.toSet());
 		
 		threads.forEach(Thread::start);
