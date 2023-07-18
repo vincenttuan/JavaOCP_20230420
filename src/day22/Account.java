@@ -22,7 +22,7 @@ public class Account {
 			// 印出交易結果
 			System.out.printf("%s 提款 $%d 失敗, 帳戶餘額 $%d\n", tName, amount, balance);
 		}
-		System.out.printf("% 提款完成\n", tName);
+		System.out.printf("%s 提款完成\n", tName);
 	}
 	
 	
