@@ -7,7 +7,7 @@ public class Account {
 		this.balance = balance;
 	}
 	
-	// 提款
+	// 提款作業
 	public void withdraw(int amount) {
 		String tName = Thread.currentThread().getName();
 		System.out.printf("%s 開始提款 $%d\n", tName, amount);
