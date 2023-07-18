@@ -20,7 +20,8 @@ public class CallableDemo {
 			return 77;
 		};
 		
-		FutureTask<Integer> futureTask = new FutureTask<>(callable);
+		//FutureTask<Integer> futureTask = new FutureTask<>(callable);
+		FutureTask futureTask = new FutureTask<>(runnable, null);
 		Thread t2 = new Thread(futureTask);
 		t2.start();
 		System.out.println(futureTask.get());
