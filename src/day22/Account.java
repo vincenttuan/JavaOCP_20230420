@@ -8,7 +8,7 @@ public class Account {
 	}
 	
 	// 提款作業
-	public void withdraw(int amount) {
+	public synchronized void withdraw(int amount) {
 		String tName = Thread.currentThread().getName();
 		// 取得最新帳戶餘額
 		int currentBalance = balance;
@@ -24,7 +24,7 @@ public class Account {
 			// 印出交易結果
 			System.out.printf("%s 提款 $%d 失敗, 帳戶餘額 $%d\n", tName, amount, balance);
 		}
-		System.out.printf("%s 提款完成\n", tName);
+		System.out.printf("%s 提款完成\n\n", tName);
 	}
 	
 	
