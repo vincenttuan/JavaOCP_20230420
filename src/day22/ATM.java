@@ -10,9 +10,9 @@ public class ATM {
 		Withdraw w2 = new Withdraw(account, 4000);
 		Withdraw w3 = new Withdraw(account, 2000);
 		// 執行緒
-		Thread t1 = new Thread(w1);
-		Thread t2 = new Thread(w2);
-		Thread t3 = new Thread(w3);
+		Thread t1 = new Thread(w1, "T1");
+		Thread t2 = new Thread(w2, "T2");
+		Thread t3 = new Thread(w3, "T3");
 		// 啟動
 		t1.start();
 		t2.start();

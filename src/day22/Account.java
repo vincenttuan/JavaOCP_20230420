@@ -10,9 +10,9 @@ public class Account {
 	// 提款作業
 	public void withdraw(int amount) {
 		String tName = Thread.currentThread().getName();
-		System.out.printf("%s 開始提款 $%d\n", tName, amount);
 		// 取得最新帳戶餘額
 		int currentBalance = balance;
+		System.out.printf("%s 開始提款 $%d 帳戶餘額 $%d\n", tName, amount, currentBalance);
 		// 模擬提款時間
 		for(int i=0;i<=10000000;i++);
 		if(currentBalance >= amount) {
