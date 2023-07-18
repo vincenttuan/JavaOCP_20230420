@@ -13,6 +13,8 @@ public class Account {
 		System.out.printf("%s 開始提款 $%d\n", tName, amount);
 		// 取得最新帳戶餘額
 		int currentBalance = balance;
+		// 模擬提款時間
+		for(int i=0;i<=10000000;i++);
 		if(currentBalance >= amount) {
 			// 將餘額減去提款金額
 			balance = balance - amount;
