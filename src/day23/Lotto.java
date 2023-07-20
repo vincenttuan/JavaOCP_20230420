@@ -4,8 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+import day23.LottoScheduledDemo.Callback;
+
 public class Lotto implements Runnable {
 	private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	private Callback cb;
+	
+	public Lotto(Callback cb) {
+		this.cb = cb;
+	}
 	
 	@Override
 	public void run() {
@@ -14,8 +21,13 @@ public class Lotto implements Runnable {
 			Thread.sleep(new Random().nextInt(2500));
 		} catch (Exception e) {
 		}
-		System.out.print(" 樂透數字 " + new Random().nextInt(100) + " ");
+		int lottoNumber = new Random().nextInt(10);
+		System.out.print(" 樂透數字 " + lottoNumber + " ");
 		System.out.println("工作結束時間:" + sdf.format(new Date()));
+		// 是否要停止服務
+		if(lottoNumber == 0) {
+			cb.stop();
+		}
 	}
 	
 }
