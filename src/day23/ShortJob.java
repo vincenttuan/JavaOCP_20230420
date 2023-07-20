@@ -4,7 +4,8 @@ public class ShortJob implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("短任務");
+		String tName = Thread.currentThread().getName();
+		System.out.println("短任務-" + tName);
 	}
 	
 }
