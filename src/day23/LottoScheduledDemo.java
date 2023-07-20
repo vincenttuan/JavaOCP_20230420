@@ -8,19 +8,19 @@ public class LottoScheduledDemo {
 	
 	static ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
 	
-	public class Callback {
+	public class ServiceStoper { // Callback
 		void stop() {
 			service.shutdownNow();
 		}
 	}
 	
 	private void start() {
-		Callback cb = new Callback();
+		ServiceStoper serviceStoper = new ServiceStoper();
 		int initDelay = 1;
 		int delay = 2;
 		//service.scheduleWithFixedDelay(new Lotto(), initDelay, delay, TimeUnit.SECONDS);
 		int period = 2;
-		service.scheduleAtFixedRate(new Lotto(cb), initDelay, period, TimeUnit.SECONDS);
+		service.scheduleAtFixedRate(new Lotto(serviceStoper), initDelay, period, TimeUnit.SECONDS);
 		System.out.println("Lotto 工作開始");
 	}
 	

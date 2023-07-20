@@ -4,14 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-import day23.LottoScheduledDemo.Callback;
+import day23.LottoScheduledDemo.ServiceStoper;
 
 public class Lotto implements Runnable {
 	private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-	private Callback cb;
+	private ServiceStoper serviceStoper;
 	
-	public Lotto(Callback cb) {
-		this.cb = cb;
+	public Lotto(ServiceStoper serviceStoper) {
+		this.serviceStoper = serviceStoper;
 	}
 	
 	@Override
@@ -26,7 +26,7 @@ public class Lotto implements Runnable {
 		System.out.println("工作結束時間:" + sdf.format(new Date()));
 		// 是否要停止服務
 		if(lottoNumber == 0) {
-			cb.stop();
+			serviceStoper.stop();
 		}
 	}
 	
