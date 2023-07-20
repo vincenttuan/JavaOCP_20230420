@@ -14,7 +14,7 @@ public class LottoScheduledDemo {
 		int delay = 2;
 		service.scheduleWithFixedDelay(new Lotto(), initDelay, delay, TimeUnit.SECONDS);
 		
-		
+		System.out.println("Lotto 工作開始");
 
 	}
 
