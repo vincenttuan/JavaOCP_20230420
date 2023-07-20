@@ -17,7 +17,10 @@ public class ATM {
 		t1.start();
 		t2.start();
 		t3.start();
-
+		
+		StringBuffer s1;
+		StringBuilder s2;
+		
 	}
 
 }
