@@ -12,6 +12,8 @@ import static java.util.stream.Collectors.maxBy;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.averagingInt;
 import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.joining;
+
 import static java.util.Comparator.comparingInt;
 
 public class ReadFileContent4 {
@@ -49,6 +51,21 @@ public class ReadFileContent4 {
 				.collect(groupingBy(Employee::getJobTitle, mapping(Employee::getName, toList())));
 		System.out.println(namesByJobTitle);
 		
+		// Lab 5: 請計算 employee.txt 中在平均薪資以上的員工與平均薪資以下的員工
+		double averageSalary = employees.stream().mapToInt(Employee::getSalary).average().orElse(0);
+		// true: 平均薪資以上的員工, false: 平均薪資以下的員工
+		Map<Boolean, List<Employee>> bySalary = employees.stream()
+				.collect(groupingBy(emp -> emp.getSalary() > averageSalary));
+		System.out.println(bySalary);
 		
+		List<Employee> aboveAverage = bySalary.get(true);
+		List<Employee> belowOrEqualAverage = bySalary.get(false);
+		System.out.println("平均薪資以上的員工:" + aboveAverage);
+		System.out.println("平均薪資以下的員工:" + belowOrEqualAverage);
+		
+		String aboveAverageNames = aboveAverage.stream().map(Employee::getName).collect(joining(", "));
+		String belowOrEqualAverageNames = belowOrEqualAverage.stream().map(Employee::getName).collect(joining(", "));
+		System.out.println("平均薪資以上的員工名字:" + aboveAverageNames);
+		System.out.println("平均薪資以下的員工名字:" + belowOrEqualAverageNames);
 	}
 }
