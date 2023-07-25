@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 //讀取檔案內容
 public class ReadFileContent {
@@ -28,8 +29,19 @@ public class ReadFileContent {
 		System.out.println(sb.length());
 		System.out.println(sb);
 		
+		// 分析內容, 將字串轉陣列
+		String[] array = sb.toString().split("\r\n");
+		System.out.println(array.length);
+		System.out.println(Arrays.toString(array));
 		
-
+		int sum = 0;
+		for(String data : array) {
+			String[] row = data.split(" ");
+			//System.out.println(row[0]); // 姓名
+			System.out.println(row[1]); // 薪資
+			sum += Integer.parseInt(row[1]);
+		}
+		System.out.println("sum = " + sum);
 	}
 
 }
