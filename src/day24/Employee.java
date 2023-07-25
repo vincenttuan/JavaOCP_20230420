@@ -5,6 +5,13 @@ public class Employee {
 	private int salary;
 	private String jobTitle;
 	
+	public Employee(String line) {
+		String[] array = line.split(" ");
+		this.name = array[0];
+		this.salary = Integer.parseInt(array[1]);
+		this.jobTitle = array[2];
+	}
+	
 	public Employee(String name, int salary, String jobTitle) {
 		this.name = name;
 		this.salary = salary;
