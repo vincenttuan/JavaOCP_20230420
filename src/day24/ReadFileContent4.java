@@ -3,6 +3,7 @@ package day24;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ReadFileContent4 {
@@ -21,6 +22,8 @@ public class ReadFileContent4 {
 		System.out.println(employees);
 		
 		// 3.計算 employee.txt 每種職位的平均薪資
-		
+		Map<String, Double> avgSalaryByJobTitle = employees.stream()
+				.collect(Collectors.groupingBy(Employee::getJobTitle, Collectors.averagingInt(Employee::getSalary)));
+		System.out.println(avgSalaryByJobTitle);
 	}
 }
