@@ -44,7 +44,7 @@ public class ReadFileContent4 {
 				.collect(groupingBy(Employee::getJobTitle, maxBy(comparingInt(Employee::getSalary))));
 		System.out.println(maxSalaryByJobTitle);
 		
-		// Lab4: 請計算 employee.txt 每種職位的員工名字有哪些
+		// Lab 4: 請計算 employee.txt 每種職位的員工名字有哪些
 		Map<String, List<String>> namesByJobTitle = employees.stream()
 				.collect(groupingBy(Employee::getJobTitle, mapping(Employee::getName, toList())));
 		System.out.println(namesByJobTitle);
