@@ -53,6 +53,7 @@ public class ReadFileContent4 {
 		
 		// Lab 5: 請計算 employee.txt 中在平均薪資以上的員工與平均薪資以下的員工
 		double averageSalary = employees.stream().mapToInt(Employee::getSalary).average().orElse(0);
+		System.out.println("平均薪資:" + averageSalary);
 		// true: 平均薪資以上的員工, false: 平均薪資以下的員工
 		Map<Boolean, List<Employee>> bySalary = employees.stream()
 				.collect(groupingBy(emp -> emp.getSalary() > averageSalary));
