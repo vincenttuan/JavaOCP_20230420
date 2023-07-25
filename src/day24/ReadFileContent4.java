@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.maxBy;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.averagingInt;
+import static java.util.stream.Collectors.mapping;
 import static java.util.Comparator.comparingInt;
 
 public class ReadFileContent4 {
@@ -42,6 +45,10 @@ public class ReadFileContent4 {
 		System.out.println(maxSalaryByJobTitle);
 		
 		// Lab4: 請計算 employee.txt 每種職位的員工名字有哪些
+		Map<String, List<String>> namesByJobTitle = employees.stream()
+				.collect(groupingBy(Employee::getJobTitle, mapping(Employee::getName, toList())));
+		System.out.println(namesByJobTitle);
+		
 		
 	}
 }
