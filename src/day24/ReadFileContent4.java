@@ -1,14 +1,19 @@
 package day24;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Optional;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.maxBy;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.averagingInt;
+import static java.util.Comparator.comparingInt;
 
 public class ReadFileContent4 {
 	public static void main(String[] args) throws IOException {
-		// 請計算 employee.txt 每種職位的平均薪資
+		// Lab 1: 請計算 employee.txt 每種職位的平均薪資
 		
 		// 1.需要建立 Employee 物件(name, salary, jobTitle)
 		List<String> lines = Util.getLines("src/day24/employee.txt");
@@ -18,12 +23,25 @@ public class ReadFileContent4 {
 		List<Employee> employees = lines.stream()
 				.map(Employee::new)
 				//.map(line -> new Employee(line))
-				.collect(Collectors.toList());
+				.collect(toList());
 		System.out.println(employees);
 		
 		// 3.計算 employee.txt 每種職位的平均薪資
 		Map<String, Double> avgSalaryByJobTitle = employees.stream()
-				.collect(Collectors.groupingBy(Employee::getJobTitle, Collectors.averagingInt(Employee::getSalary)));
+				.collect(groupingBy(Employee::getJobTitle, averagingInt(Employee::getSalary)));
 		System.out.println(avgSalaryByJobTitle);
+		
+		// Lab 2: 請計算 employee.txt 每種職位的人數
+		Map<String, Long> countByJobTitle = employees.stream()
+				.collect(groupingBy(Employee::getJobTitle, counting()));
+		System.out.println(countByJobTitle);
+		
+		// Lab 3: 請計算 employee.txt 每種職位的中薪資最高的員工
+		Map<String, Optional<Employee>> maxSalaryByJobTitle = employees.stream()
+				.collect(groupingBy(Employee::getJobTitle, maxBy(comparingInt(Employee::getSalary))));
+		System.out.println(maxSalaryByJobTitle);
+		
+		// Lab4: 請計算 employee.txt 每種職位的員工名字有哪些
+		
 	}
 }
