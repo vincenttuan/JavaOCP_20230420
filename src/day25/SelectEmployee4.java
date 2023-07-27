@@ -19,14 +19,17 @@ public class SelectEmployee4 {
 		Class.forName(driverName);
 		
 		// 尋找薪資 >= ? 的資料
-		String sql = "select name, salary, title from employee where salary >= ?";
+		//String sql = "select name, salary, title from employee where salary >= ? and title = ?";
+		String sql = "select name, salary, title from employee where salary >= ? and title in (?, ?)";
 		
 		// 利用 try-with-resources 來自動關閉資源
 		// 使用 PreparedStatement 來防止 SQL Injection 的攻擊
 		try(Connection conn = DriverManager.getConnection(dbUrl, username, password);
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			
-			pstmt.setInt(1, 50000);
+			pstmt.setInt(1, 30000);
+			pstmt.setString(2, "Developer");
+			pstmt.setString(3, "Tester");
 			
 			try(ResultSet rs = pstmt.executeQuery();){
 				while (rs.next()) {  // 自動輪詢
