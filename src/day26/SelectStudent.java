@@ -3,6 +3,7 @@ package day26;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -23,8 +24,21 @@ public class SelectStudent {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql)) {
 			
-			List<Student> students = new ArrayList<>();
+			// 取得資料表欄位名
+			ResultSetMetaData md = rs.getMetaData();
+			for(int i=1; i<=md.getColumnCount();i++) {
+				System.out.printf("%10s", md.getColumnLabel(i));
+			}
 			
+			// 分隔線
+			System.out.println();
+			for(int i=0;i<50;i++) {
+				System.out.print("-");
+			}
+			System.out.println();
+			
+			// 取得資料表內容
+			List<Student> students = new ArrayList<>();
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				int score1 = rs.getInt("score1");
@@ -44,7 +58,7 @@ public class SelectStudent {
 			
 			//System.out.println(students);
 			for(Student student : students) {
-				System.out.printf("%2d%5d%5d%5d%5d\n", 
+				System.out.printf("%10d%10d%10d%10d%10d\n", 
 								  student.getId(), 
 								  student.getScore1(), student.getScore2(), student.getScore3(), student.getScore4());
 			}
