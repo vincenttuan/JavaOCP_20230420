@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SelectStudent {
 	public static void main(String[] args) {
@@ -21,6 +23,31 @@ public class SelectStudent {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql)) {
 			
+			List<Student> students = new ArrayList<>();
+			
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				int score1 = rs.getInt("score1");
+				int score2 = rs.getInt("score2");
+				int score3 = rs.getInt("score3");
+				int score4 = rs.getInt("score4");
+				
+				Student student = new Student();
+				student.setId(id);
+				student.setScore1(score1);
+				student.setScore2(score2);
+				student.setScore3(score3);
+				student.setScore4(score4);
+				
+				students.add(student);
+			}
+			
+			//System.out.println(students);
+			for(Student student : students) {
+				System.out.printf("%2d%5d%5d%5d%5d\n", 
+								  student.getId(), 
+								  student.getScore1(), student.getScore2(), student.getScore3(), student.getScore4());
+			}
 			
 			
 		} catch (SQLException e) {
