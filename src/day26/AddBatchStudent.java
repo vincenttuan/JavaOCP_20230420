@@ -43,7 +43,7 @@ public class AddBatchStudent {
 				pstmt.setInt(2, score2);
 				pstmt.setInt(3, score3);
 				pstmt.setInt(4, score4);
-				pstmt.addBatch(sql);
+				pstmt.addBatch();
 			}
 			
 			int[] resultArray = pstmt.executeBatch();
