@@ -36,9 +36,9 @@ public class AddBatchStudent {
 			for(String line : lines) {
 				String[] arr = line.split(",");
 				int score1 = Integer.parseInt(arr[0].trim());
-				int score2 = Integer.parseInt(arr[0].trim());
-				int score3 = Integer.parseInt(arr[0].trim());
-				int score4 = Integer.parseInt(arr[0].trim());
+				int score2 = Integer.parseInt(arr[1].trim());
+				int score3 = Integer.parseInt(arr[2].trim());
+				int score4 = Integer.parseInt(arr[3].trim());
 				pstmt.setInt(1, score1);
 				pstmt.setInt(2, score2);
 				pstmt.setInt(3, score3);
