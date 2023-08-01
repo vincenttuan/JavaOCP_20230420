@@ -9,14 +9,14 @@ public class CreateStudentTable {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		// MySQL 資料連線設定
-		String dbUrl = "jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=Asia/Taipei";
+		String dbUrl = "jdbc:mysql://localhost:3306/demo?allowPublicKeyRetrieval=true&serverTimezone=Asia/Taipei";
 		String username = "root";
 		String password = "12345678";
 		String driverName = "com.mysql.cj.jdbc.Driver";
 		
 		// 建立 student 資料表的 sql
 		String sql = "create table if not exists student ("
-				+ "id int not null, "
+				+ "id int not null AUTO_INCREMENT, "
 				+ "score1 int, "
 				+ "score2 int, "
 				+ "score3 int, "
