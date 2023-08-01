@@ -36,12 +36,16 @@ public class SelectStudent2 {
 			// 取得資料表欄位名
 			ResultSetMetaData md = rs.getMetaData();
 			for(int i=1; i<=md.getColumnCount();i++) {
-				System.out.printf("%10s", md.getColumnLabel(i));
+				String label = md.getColumnLabel(i);
+				if(label.equals("total_score")) {
+					label = "total";
+				}
+				System.out.printf("%10s", label);
 			}
 			
 			// 分隔線
 			System.out.println();
-			for(int i=0;i<55;i++) {
+			for(int i=0;i<70;i++) {
 				System.out.print("-");
 			}
 			System.out.println();
@@ -55,6 +59,7 @@ public class SelectStudent2 {
 				int score2 = rs.getInt("score2");
 				int score3 = rs.getInt("score3");
 				int score4 = rs.getInt("score4");
+				int totalScore = rs.getInt("total_score");
 				
 				Student student = new Student();
 				student.setMyrank(myrank);
@@ -63,15 +68,17 @@ public class SelectStudent2 {
 				student.setScore2(score2);
 				student.setScore3(score3);
 				student.setScore4(score4);
+				student.setTotalScore(totalScore);
 				
 				students.add(student);
 			}
 			
 			//System.out.println(students);
 			for(Student student : students) {
-				System.out.printf("%10d%10d%10d%10d%10d%10d\n", 
+				System.out.printf("%10d%10d%10d%10d%10d%10d%10d\n", 
 								  student.getMyrank(), student.getId(), 
-								  student.getScore1(), student.getScore2(), student.getScore3(), student.getScore4());
+								  student.getScore1(), student.getScore2(), student.getScore3(), student.getScore4(),
+								  student.getTotalScore());
 			}
 			
 			

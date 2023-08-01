@@ -7,6 +7,7 @@ public class Student {
 	private Integer score2;
 	private Integer score3;
 	private Integer score4;
+	private Integer totalScore;
 	public Integer getMyrank() {
 		return myrank;
 	}
@@ -43,11 +44,18 @@ public class Student {
 	public void setScore4(Integer score4) {
 		this.score4 = score4;
 	}
+	public Integer getTotalScore() {
+		return totalScore;
+	}
+	public void setTotalScore(Integer totalScore) {
+		this.totalScore = totalScore;
+	}
 	@Override
 	public String toString() {
 		return "Student [myrank=" + myrank + ", id=" + id + ", score1=" + score1 + ", score2=" + score2 + ", score3="
-				+ score3 + ", score4=" + score4 + "]";
+				+ score3 + ", score4=" + score4 + ", totalScore=" + totalScore + "]";
 	}
+	
 	
 	
 	
