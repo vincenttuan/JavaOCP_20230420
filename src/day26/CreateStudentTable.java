@@ -31,14 +31,9 @@ public class CreateStudentTable {
 		try(Connection conn = DriverManager.getConnection(dbUrl, username, password);
 			Statement stmt = conn.createStatement();) {
 			// 執行一個新增資料表的 sql, 使用 executeUpdate
-			// result = 1 表示新增成功, result = 0 表示資料表已經存在不用再新增
 			int result = stmt.executeUpdate(sql);
-			
-			if(result == 1) {
-				System.out.println("Student 資料表新增成功");
-			} else {
-				System.out.println("Student 表示資料表已經存在不用再新增");
-			}
+			System.out.println("result = " + result);
+			System.out.println("Student 資料表新增成功");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
