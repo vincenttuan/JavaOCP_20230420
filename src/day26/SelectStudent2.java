@@ -19,7 +19,16 @@ public class SelectStudent2 {
 		String driverName = "com.mysql.cj.jdbc.Driver";
 		
 		// 查詢 student 資料並排名次
-		
+		// 透過預儲程序 store procedure
+		/*
+		 	CREATE DEFINER=`root`@`localhost` PROCEDURE `myrank`()
+			BEGIN
+			SET @rank = 0;
+			SELECT (@rank := @rank + 1) as myrank, id, score1, score2, score3, score4, (score1 + score2 + score3 + score4) as total_score
+			FROM demo.student
+			ORDER BY total_score DESC;
+			END
+		 */
 		try(Connection conn = DriverManager.getConnection(dbUrl, username, password);
 			CallableStatement stmt = conn.prepareCall("{call myrank()}");) {
 			
